@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- Firebase App SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<!-- Firebase Firestore SDK -->
+   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<script>
     // Konfigurasi Firebase Anda
     const firebaseConfig = {
         apiKey: "AIzaSyAP64aCtywB4WN8-3kvhMDyGahnkq_3ymg",
@@ -16,10 +15,13 @@
         measurementId: "G-79KPJY3BB8"
     };
 
-    // Inisialisasi Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    console.log("Firebase berhasil terhubung!");
+    // Inisialisasi Firebase secara global
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+    window.db = firebase.firestore();
+    console.log("Firebase berhasil terhubung secara global!");
+</script>
 </script>
 
     <meta charset="UTF-8">
