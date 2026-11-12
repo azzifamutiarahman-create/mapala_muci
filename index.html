@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+   <!-- Firebase App SDK (Compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<!-- Firebase Firestore SDK (Compat) -->
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <script>
     // Konfigurasi Firebase Anda
@@ -15,15 +17,13 @@
         measurementId: "G-79KPJY3BB8"
     };
 
-    // Inisialisasi Firebase secara global
+    // Inisialisasi Firebase
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
     }
-    window.db = firebase.firestore();
-    console.log("Firebase berhasil terhubung secara global!");
+    const db = firebase.firestore();
+    console.log("Firebase berhasil terhubung!");
 </script>
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAPALA MUCI - Sistem Absensi Piket, Rapat & Kegiatan</title>
